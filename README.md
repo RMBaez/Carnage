@@ -10,27 +10,27 @@ NOTE: DO NOT directly interact with any domains and IP addresses in this challen
 
 <h2>Questions</h2>
 
-- <b>What was the date and time for the first HTTP connection to the malicious IP?
+- <b>1. What was the date and time for the first HTTP connection to the malicious IP?
 (answer format: yyyy-mm-dd hh:mm:ss)</b>
-- <b>What is the name of the zip file that was downloaded?</b>
-- <b>What was the domain hosting the malicious zip file?</b>
-- <b>Without downloading the file, what is the name of the file in the zip file?</b>
-- <b>What is the name of the webserver of the malicious IP from which the zip file was downloaded?</b>
-- <b>What is the version of the webserver from the previous question?</b>
-- <b>Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?</b>
-- <b>Which certificate authority issued the SSL certificate to the first domain from the previous question?</b>
-- <b>What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: - enter the IP addresses in sequential order)</b>
-- <b>What is the Host header for the first Cobalt Strike IP address from the previous question?</b>
-- <b>What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).</b>
-- <b>What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).</b>
-- <b>What is the domain name of the post-infection traffic?</b>
-- <b>What are the first eleven characters that the victim host sends out to the malicious domain involved in the post-infection traffic?</b>
-- <b>What was the length for the first packet sent out to the C2 server?</b>
-- <b>What was the Server header for the malicious domain from the previous question?</b>
-- <b>The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (answer format: yyyy-mm-dd hh:mm:ss UTC)</b>
-- <b>What was the domain in the DNS query from the previous question?</b>
-- <b>Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?</b>
-- <b>How many packets were observed for the SMTP traffic?</b>
+- <b>2. What is the name of the zip file that was downloaded?</b>
+- <b>3. What was the domain hosting the malicious zip file?</b>
+- <b>4. Without downloading the file, what is the name of the file in the zip file?</b>
+- <b>5. What is the name of the webserver of the malicious IP from which the zip file was downloaded?</b>
+- <b>6. What is the version of the webserver from the previous question?</b>
+- <b>7. Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?</b>
+- <b>8. Which certificate authority issued the SSL certificate to the first domain from the previous question?</b>
+- <b>9. What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: - enter the IP addresses in sequential order)</b>
+- <b>10. What is the Host header for the first Cobalt Strike IP address from the previous question?</b>
+- <b>11. What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).</b>
+- <b>12. What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).</b>
+- <b>13. What is the domain name of the post-infection traffic?</b>
+- <b>14. What are the first eleven characters that the victim host sends out to the malicious domain involved in the post-infection traffic?</b>
+- <b>15. What was the length for the first packet sent out to the C2 server?</b>
+- <b>16. What was the Server header for the malicious domain from the previous question?</b>
+- <b>17. The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (answer format: yyyy-mm-dd hh:mm:ss UTC)</b>
+- <b>18. What was the domain in the DNS query from the previous question?</b>
+- <b>19. Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?</b>
+- <b>20. How many packets were observed for the SMTP traffic?</b>
 
 
 <h2>Languages and Utilities Used</h2>
@@ -46,7 +46,7 @@ NOTE: DO NOT directly interact with any domains and IP addresses in this challen
 
 <b>Answer the question below <br/>
 
-What was the date and time for the first HTTP connection to the malicious IP?
+1. What was the date and time for the first HTTP connection to the malicious IP?
 (answer format: yyyy-mm-dd hh:mm:ss)?
 
 <p align="center">
@@ -65,7 +65,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What is the name of the zip file that was downloaded?
+2. What is the name of the zip file that was downloaded?
 
 <p align="center">
 The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
@@ -86,7 +86,7 @@ Answer is ----- <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What was the domain hosting the malicious zip file?
+3. What was the domain hosting the malicious zip file?
 
 
 <p align="center">
@@ -120,7 +120,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Without downloading the file, what is the name of the file in the zip file?
+4. Without downloading the file, what is the name of the file in the zip file?
 
 <p align="center">
 The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
@@ -136,7 +136,7 @@ Answer is ----- <br/>
 
 <b>Answer the question below <br/>
 
-What is the name of the webserver of the malicious IP from which the zip file was downloaded?
+5. What is the name of the webserver of the malicious IP from which the zip file was downloaded?
 
 <p align="center">
 I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
@@ -166,7 +166,7 @@ Answer is --------- <br/>
 
 <b>Answer the question below <br/>
 
-What is the version of the webserver from the previous question?
+6. What is the version of the webserver from the previous question?
 
 
 <p align="center">
@@ -185,7 +185,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?
+7. Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?
 
 <p align="center">
 The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
@@ -206,7 +206,7 @@ Answer is ----- <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Which certificate authority issued the SSL certificate to the first domain from the previous question?
+8. Which certificate authority issued the SSL certificate to the first domain from the previous question?
 
 
 <p align="center">
@@ -240,7 +240,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: enter the IP addresses in sequential order)
+9. What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: enter the IP addresses in sequential order)
 
 <p align="center">
 The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
@@ -256,7 +256,7 @@ Answer is ----- <br/>
 
 <b>Answer the question below <br/>
 
-What is the Host header for the first Cobalt Strike IP address from the previous question?
+10. What is the Host header for the first Cobalt Strike IP address from the previous question?
 
 <p align="center">
 I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
@@ -286,7 +286,7 @@ Answer is --------- <br/>
 
 <b>Answer the question below <br/>
 
-What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
+11. What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
 <p align="center">
 To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
@@ -304,7 +304,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
+12. What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
 <p align="center">
 The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
@@ -325,7 +325,7 @@ Answer is ----- <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What is the domain name of the post-infection traffic?
+13. What is the domain name of the post-infection traffic?
 
 
 <p align="center">
@@ -359,7 +359,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What are the first eleven characters that the victim host sends out to the malicious domain involved in the post-infection traffic? 
+14. What are the first eleven characters that the victim host sends out to the malicious domain involved in the post-infection traffic? 
 
 <p align="center">
 The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
@@ -375,7 +375,7 @@ Answer is ----- <br/>
 
 <b>Answer the question below <br/>
 
-What was the length for the first packet sent out to the C2 server?
+15. What was the length for the first packet sent out to the C2 server?
 
 <p align="center">
 I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
@@ -404,8 +404,7 @@ Answer is --------- <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-
-What was the Server header for the malicious domain from the previous question?
+16. What was the Server header for the malicious domain from the previous question?
 
 
 <p align="center">
@@ -424,7 +423,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (answer format: yyyy-mm-dd hh:mm:ss UTC)
+17. The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (answer format: yyyy-mm-dd hh:mm:ss UTC)
 
 <p align="center">
 The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
@@ -445,7 +444,7 @@ Answer is ----- <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-What was the domain in the DNS query from the previous question?
+18. What was the domain in the DNS query from the previous question?
 
 
 <p align="center">
@@ -479,7 +478,7 @@ Answer is ------ <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?
+19. Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?
 
 <p align="center">
 The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
@@ -495,7 +494,7 @@ Answer is ----- <br/>
 
 <b>Answer the question below <br/>
 
-How many packets were observed for the SMTP traffic?
+20. How many packets were observed for the SMTP traffic?
 
 <p align="center">
 I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
