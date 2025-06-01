@@ -311,25 +311,13 @@ Answer is zLIisQRWZI <br/>
 15. What was the length for the first packet sent out to the C2 server?
 
 <p align="center">
-I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/c295758a-0cf0-42ab-be0c-7f12cb61cc74" />
-
-  
-With 7 results I looked through them all. Looking at each CommandLine field within the events, the one that had looked suspicious to me was the answer to the question.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 37 12 PM" src="https://github.com/user-attachments/assets/8d058594-06b9-4abf-b23c-5d9dbc1f936f" />
-
-After looking at how others solved this question, there is a more efficient way. There is an event id associated with program execution (Event ID 4688)
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/1b2a15b3-7489-4844-831e-0e2871c29a48" />
-The full search should be " index=main EventID=4688 A1berto ". Look at the CommandLine field and you'll find the same answer. Through this search I learned that WMIC is a software utility that allows users to perform Windows Management Instrumentation operations with a command prompt. That ransomware authors have been seen to use wmic.exe to gain access to remote systems and then perform processes on it to prepare for or execute the ransomware attack.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 50 01 PM" src="https://github.com/user-attachments/assets/ad356081-fbc7-434e-ad31-fe34cf339e34" />
-
-
+In the packet list in the section where it says 'length' is the answer. <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 7 12 18 PM" src="https://github.com/user-attachments/assets/2733e5e0-3763-4dc4-8130-2665b01e6e1d" />
 
 
 <br />
 <br />
-Answer is --------- <br/>
-
+Answer is 281 <br/>
 
 
 
@@ -341,13 +329,14 @@ Answer is --------- <br/>
 
 
 <p align="center">
-To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
-<img width="1440" alt="Screenshot 2025-04-15 at 12 19 26 PM" src="https://github.com/user-attachments/assets/ef61c4eb-b481-4dec-baa5-3f5069cc5b2d" />
+On the packet, I opened the HTTP Stream. Looked for server and found it.  <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 7 24 37 PM" src="https://github.com/user-attachments/assets/35cd3ddb-7746-4808-9e39-5a136dd5a79b" />
+
 
 
 <br />
 <br />
-Answer is ------ <br/>
+Answer is Apache/2.4.49 (cPanel) OpenSSL/1.1.1l mod_bwlimited/1.4 <br/>
 
 
 
