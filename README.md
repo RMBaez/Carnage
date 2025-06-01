@@ -6,7 +6,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd has received an email
 
 Task: Investigate the packet capture and uncover the malicious activities. 
 
-NOTE: DO NOT directly interact with any domains and IP addresses in this challenge. 
+NOTE: DO NOT directly interact with any domains and IP addresses in this challenge. Answers will be in defang format.
 
 <h2>Questions</h2>
 
@@ -203,12 +203,13 @@ Answer is GoDaddy <br/>
 9. What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: enter the IP addresses in sequential order)
 
 <p align="center">
-The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
+The hint given for this question is "Check the Conversations menu option" and I did exactly just that. I had VirusTotal on another tab. What I did was reordered the 'Address B' table to organize all IPs. I copied and pasted every IP into VirusTotal until I found the 2 IPs that belong to the Cobalt Strike servers. 
+<img width="1440" alt="Screenshot 2025-06-01 at 5 52 58 PM" src="https://github.com/user-attachments/assets/680ab83c-0b10-4d6a-ac6e-d4618bb03444" />
 
 
 <br />
 <br />
-Answer is ----- <br/>
+Answer is 185[.]106[.]96[.]158, 185[.]125[.]204[.]174 <br/>
 
 
 
@@ -219,26 +220,13 @@ Answer is ----- <br/>
 10. What is the Host header for the first Cobalt Strike IP address from the previous question?
 
 <p align="center">
-I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/c295758a-0cf0-42ab-be0c-7f12cb61cc74" />
-
-  
-With 7 results I looked through them all. Looking at each CommandLine field within the events, the one that had looked suspicious to me was the answer to the question.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 37 12 PM" src="https://github.com/user-attachments/assets/8d058594-06b9-4abf-b23c-5d9dbc1f936f" />
-
-After looking at how others solved this question, there is a more efficient way. There is an event id associated with program execution (Event ID 4688)
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/1b2a15b3-7489-4844-831e-0e2871c29a48" />
-The full search should be " index=main EventID=4688 A1berto ". Look at the CommandLine field and you'll find the same answer. Through this search I learned that WMIC is a software utility that allows users to perform Windows Management Instrumentation operations with a command prompt. That ransomware authors have been seen to use wmic.exe to gain access to remote systems and then perform processes on it to prepare for or execute the ransomware attack.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 50 01 PM" src="https://github.com/user-attachments/assets/ad356081-fbc7-434e-ad31-fe34cf339e34" />
-
-
-
-
+I entered into the display filter: ip.dst==185[.]106[.]96[.]158. I went to the packet with the first GET request. Went into the HyperText Transfer Protocol section and there found the answer. <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 6 05 37 PM" src="https://github.com/user-attachments/assets/92ecd630-c31f-4f3d-a0bc-7605884b6dfa" />
 
 
 <br />
 <br />
-Answer is --------- <br/>
+Answer is oscp[.]verisign[.]com <br/>
 
 
 
