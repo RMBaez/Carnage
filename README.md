@@ -145,13 +145,14 @@ Answer LiteSpeed <br/>
 
 
 <p align="center">
-To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
-<img width="1440" alt="Screenshot 2025-04-15 at 12 19 26 PM" src="https://github.com/user-attachments/assets/ef61c4eb-b481-4dec-baa5-3f5069cc5b2d" />
+I kept the HTTP Stream for packet 2173 open for this question. There is a line that says 'x-powered-by' and there is the answer <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 3 18 53 PM" src="https://github.com/user-attachments/assets/252e6b48-9362-4a26-a065-ca564db0e85f" />
+
 
 
 <br />
 <br />
-Answer is ------ <br/>
+Answer is PHP/7.2.34 <br/>
 
 
 
