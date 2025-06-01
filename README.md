@@ -11,7 +11,6 @@ NOTE: DO NOT directly interact with any domains and IP addresses in this challen
 <h2>Questions</h2>
 
 - <b>What was the date and time for the first HTTP connection to the malicious IP?
-
 (answer format: yyyy-mm-dd hh:mm:ss)</b>
 - <b>What is the name of the zip file that was downloaded?</b>
 - <b>What was the domain hosting the malicious zip file?</b>
