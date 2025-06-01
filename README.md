@@ -108,12 +108,12 @@ Answer is attirenepal[.]com <br/>
 4. Without downloading the file, what is the name of the file in the zip file?
 
 <p align="center">
-The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
+In packet 1735 under the Hypertext Transfer Protocol section, it said that the response packet was 2173, so I went there. Once there, I decided to open up a HTTP Stream for easier reading. Not long into reading the hex, I spotted something that looked like a possible file name recognzing the "xls" as a file type and the filename looked suspicious.
 
 
 <br />
 <br />
-Answer is ----- <br/>
+Answer is chart-1530076591[.]xls <br/>
 
 
 
@@ -124,24 +124,14 @@ Answer is ----- <br/>
 5. What is the name of the webserver of the malicious IP from which the zip file was downloaded?
 
 <p align="center">
-I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/c295758a-0cf0-42ab-be0c-7f12cb61cc74" />
-
+I kept the HTTP Stream for packet 2173 open for this question. There is a line that says 'server' and there is the answer <br/>
   
-With 7 results I looked through them all. Looking at each CommandLine field within the events, the one that had looked suspicious to me was the answer to the question.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 37 12 PM" src="https://github.com/user-attachments/assets/8d058594-06b9-4abf-b23c-5d9dbc1f936f" />
-
-After looking at how others solved this question, there is a more efficient way. There is an event id associated with program execution (Event ID 4688)
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/1b2a15b3-7489-4844-831e-0e2871c29a48" />
-The full search should be " index=main EventID=4688 A1berto ". Look at the CommandLine field and you'll find the same answer. Through this search I learned that WMIC is a software utility that allows users to perform Windows Management Instrumentation operations with a command prompt. That ransomware authors have been seen to use wmic.exe to gain access to remote systems and then perform processes on it to prepare for or execute the ransomware attack.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 50 01 PM" src="https://github.com/user-attachments/assets/ad356081-fbc7-434e-ad31-fe34cf339e34" />
-
-
+<img width="1440" alt="Screenshot 2025-06-01 at 12 42 50 PM" src="https://github.com/user-attachments/assets/7907b939-1481-4db8-939d-7db1b623ce33" />
 
 
 <br />
 <br />
-Answer is --------- <br/>
+Answer LiteSpeed <br/>
 
 
 
