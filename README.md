@@ -50,8 +50,9 @@ NOTE: DO NOT directly interact with any domains and IP addresses in this challen
 (answer format: yyyy-mm-dd hh:mm:ss)?
 
 <p align="center">
-To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
-<img width="1440" alt="Screenshot 2025-04-15 at 12 19 26 PM" src="https://github.com/user-attachments/assets/ef61c4eb-b481-4dec-baa5-3f5069cc5b2d" />
+I simply filtered the packets to show HTTP, and checked the first frame’s details: <br/>
+  
+<img width="1440" alt="Screenshot 2025-06-01 at 11 51 31 AM" src="https://github.com/user-attachments/assets/90621771-0707-469f-90ec-03c23290d44c" />
 
 
 <br />
