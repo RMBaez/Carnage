@@ -164,19 +164,17 @@ Answer is PHP/7.2.34 <br/>
 7. Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?
 
 <p align="center">
-The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/e77b5546-f0b4-47fc-88db-8ea4b0051113" />
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/e13a9add-d45e-4f67-9e21-d4a601e6cb01" />
-<img width="1440" alt="Screenshot 2025-04-15 at 12 35 46 PM" src="https://github.com/user-attachments/assets/74aa703f-b5d0-4eca-b7eb-2b1cd55fc5b0" />
-
-
+There was a hint to this question and it said 'Check HTTPS traffic. Narrow down the timeframe from 16:45:11 to 16:45:30.' To be honest... without this hint, I wouldn't have known how to even begin to find the answer to this question. HTTPS uses encryption for secured communication over computer networks and TLS is used to encrypt the communication protocol. I used the filter tls.handshake.type==1 and received 181 results. I needed to add more filters to minimize the results. I didn't know how to manually write the filter for focusing on the given timeframe so in the packet details in the Frame section, I right clicked on the arrival time and added it into the display filter. I did it twice and modified the time according to the hint given. The completed filter used was : ((tls.handshake.type==1 ) && (frame.time >= "Sep 24, 2021 16:45:11") ) && (frame.time <= "Sep 24, 2021 16:45:30"). I then went to Preferences, went to name resolution and checked resolved network (IP) addresses. I found the answers to the question.     <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 4 20 34 PM" src="https://github.com/user-attachments/assets/8e7ee4c1-7a92-4f3d-bd92-bc7c8c7b4295" />
+<img width="1440" alt="Screenshot 2025-06-01 at 4 23 16 PM" src="https://github.com/user-attachments/assets/8c4054bd-d63f-415d-8af5-0825c08b35ac" />
+<img width="1440" alt="Screenshot 2025-06-01 at 4 39 09 PM" src="https://github.com/user-attachments/assets/b30d78d1-35d0-4c55-a4a1-fb9a4c5f0e25" />
+<img width="1440" alt="Screenshot 2025-06-01 at 4 44 28 PM" src="https://github.com/user-attachments/assets/aa81bd53-35fd-48c2-a083-bc3da09e8eaf" />
+<img width="1440" alt="Screenshot 2025-06-01 at 4 46 37 PM" src="https://github.com/user-attachments/assets/015f9bf0-558b-4d55-8e70-95016fcc754e" />
 
 
 <br />
 <br />
-Answer is ----- <br/>
-
-
+Answer is finejewels[.]com[.]au, thietbiagt[.]com, new[.]americold[.]com <br/>
 
 
 <h2>Program walk-through</h2>
