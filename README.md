@@ -293,12 +293,14 @@ Answer is maldivehost[.]net <br/>
 14. What are the first eleven characters that the victim host sends out to the malicious domain involved in the post-infection traffic? 
 
 <p align="center">
-The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
+In the packet list, in the section where it says 'Info', there is the answer.
+<img width="1440" alt="Screenshot 2025-06-01 at 7 07 22 PM" src="https://github.com/user-attachments/assets/800d25aa-f93e-4d20-9650-19afca0b442a" />
+
 
 
 <br />
 <br />
-Answer is ----- <br/>
+Answer is zLIisQRWZI <br/>
 
 
 
