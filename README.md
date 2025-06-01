@@ -226,7 +226,9 @@ I entered into the display filter: ip.dst==185[.]106[.]96[.]158. I went to the p
 
 <br />
 <br />
-Answer is oscp[.]verisign[.]com <br/>
+Answer is ocsp[.]verisign[.]com <br/>
+
+
 
 
 
@@ -237,13 +239,14 @@ Answer is oscp[.]verisign[.]com <br/>
 11. What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
 <p align="center">
-To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
-<img width="1440" alt="Screenshot 2025-04-15 at 12 19 26 PM" src="https://github.com/user-attachments/assets/ef61c4eb-b481-4dec-baa5-3f5069cc5b2d" />
+I filtered the first IP address into the display filter. I then went to Preferences, went to name resolution and checked resolved network (IP) addresses. I found the answers to the question. <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 6 32 47 PM" src="https://github.com/user-attachments/assets/6fb9cd71-0280-451b-974b-6e5eea886d69" />
+
 
 
 <br />
 <br />
-Answer is ------ <br/>
+Answer is survmeter[.]live <br/>
 
 
 
@@ -255,17 +258,11 @@ Answer is ------ <br/>
 12. What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
 <p align="center">
-The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/e77b5546-f0b4-47fc-88db-8ea4b0051113" />
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/e13a9add-d45e-4f67-9e21-d4a601e6cb01" />
-<img width="1440" alt="Screenshot 2025-04-15 at 12 35 46 PM" src="https://github.com/user-attachments/assets/74aa703f-b5d0-4eca-b7eb-2b1cd55fc5b0" />
-
-
-
+I couldn't find the answer using the same method as the previous question so I copy and pasted the second IP address into VirusTotal and got the answer.. <br/>
 
 <br />
 <br />
-Answer is ----- <br/>
+Answer is securitybusinpuff[.]com <br/>
 
 
 
@@ -277,28 +274,14 @@ Answer is ----- <br/>
 
 
 <p align="center">
-We now know which device the user A1berto was created on. <img width="1440" alt="Screenshot 2025-04-15 at 12 42 58 PM" src="https://github.com/user-attachments/assets/410b3f31-0e99-452d-a84d-25bf5fcd724b" /> <br/>
+In the display filter I put: http.request.method==POST. I had left the name resolution preference on. <br/>
+<img width="1440" alt="Screenshot 2025-06-01 at 6 55 39 PM" src="https://github.com/user-attachments/assets/9b2f872a-fb82-40a4-b361-b58d146beced" />
 
   
-We add Micheal.Beaven in the seach bar
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/7ad5b04f-82e5-441f-88ac-cde3c3f14371" />
-
-  
-To find the answer I did a few things. Frist, I google for the event id that was associated with registry modification. The event id I received and inputted resulted in zero events. I removed the attempted event id search and instead, I then added the user "A1berto" into the search bar since the user "A1berto" is still the topic. It helped to reduced the number of events low enough where I wouldn't mind scrolling and reading through the events to find the answer. However, I want to be a bit more precise. I looked through the fields and found "extracted_EventType" which caught my eye. I clicked it and saw CreateKey so I added that into my search resulting in 1 event.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 11 52 PM" src="https://github.com/user-attachments/assets/7ee146cd-e597-4777-9b80-ad9c98b649d2" />
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/5025cc9a-d8b0-4bde-98bd-2e1cbc0edc0d" />
-
-
-I scrolled down and under the field "Target_Object" the answer appears.
-<img width="1440" alt="Screenshot 2025-04-15 at 1 16 33 PM" src="https://github.com/user-attachments/assets/21d3fae0-3243-4c74-99de-b65a400e6c24" />
-
-
-
 
 <br />
 <br />
-Answer is ------ <br/>
-
+Answer is maldivehost[.]net <br/>
 
 
 
