@@ -46,7 +46,8 @@ NOTE: DO NOT directly interact with any domains and IP addresses in this challen
 
 <b>Answer the question below <br/>
 
-How many events were collected and Ingested in the index main? ?
+What was the date and time for the first HTTP connection to the malicious IP?
+(answer format: yyyy-mm-dd hh:mm:ss)?
 
 <p align="center">
 To get the complete total number of events, we must first set the time filter to "All Time"(enclosed in pink on the top right). Then I input "index=main" on the search bar. The answer is enclosed in the red box. <br/>
@@ -55,7 +56,7 @@ To get the complete total number of events, we must first set the time filter to
 
 <br />
 <br />
-Answer is 12,256: <br/>
+Answer is ------ <br/>
 
 
 
@@ -64,7 +65,7 @@ Answer is 12,256: <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?
+What is the name of the zip file that was downloaded?
 
 <p align="center">
 The question states the adversaty CREATING a backdoor user. I googled the event id associated with user creation and recieved event id 4720. I then added EventID=4720 into the search bar. I scrolled down and found the newly created user. At a quick glance it might read Alberto but the "l" is actually a "1" thus giving the answer.    <br/>
@@ -77,7 +78,7 @@ The question states the adversaty CREATING a backdoor user. I googled the event 
 
 <br />
 <br />
-Answer is A1berto <br/>
+Answer is ----- <br/>
 
 
 
@@ -85,7 +86,7 @@ Answer is A1berto <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?
+What was the domain hosting the malicious zip file?
 
 
 <p align="center">
@@ -109,7 +110,7 @@ I scrolled down and under the field "Target_Object" the answer appears.
 
 <br />
 <br />
-Answer is HKLM\SAM\SAM\Domains\Account\Users\Names\A1berto <br/>
+Answer is ------ <br/>
 
 
 
@@ -119,7 +120,7 @@ Answer is HKLM\SAM\SAM\Domains\Account\Users\Names\A1berto <br/>
 <h2>Program walk-through</h2>
 
 <b>Answer the question below <br/>
-Examine the logs and identify the user that the adversary was trying to impersonate.
+Without downloading the file, what is the name of the file in the zip file?
 
 <p align="center">
 The answer was dicussed in an earlier question. User A1berto is impersonating Alberto
@@ -127,7 +128,7 @@ The answer was dicussed in an earlier question. User A1berto is impersonating Al
 
 <br />
 <br />
-Answer is Alberto <br/>
+Answer is ----- <br/>
 
 
 
@@ -135,7 +136,7 @@ Answer is Alberto <br/>
 
 <b>Answer the question below <br/>
 
-What is the command used to add a backdoor user from a remote computer?
+What is the name of the webserver of the malicious IP from which the zip file was downloaded?
 
 <p align="center">
 I knew to look for an executable file(.exe). Since the question asked what command was used, I looked the a field containing the word command and "CommandLine" appeared. I did a quick look at it and saw one that looked suspicious. I decided to seach the field "CommandLine" as a wildcard just to not overlook anything. Also, I once again added user "A1berto" to focus the search. <br/>
@@ -157,7 +158,7 @@ The full search should be " index=main EventID=4688 A1berto ". Look at the Comma
 
 <br />
 <br />
-Answer is C:\windows\System32\Wbem\WMIC.exe" /node:WORKSTATION6 process call create "net user /add A1berto paw0rd1 <br/>
+Answer is --------- <br/>
 
 
 
